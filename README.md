@@ -1,73 +1,106 @@
-# React + TypeScript + Vite
+# Juls.Terminal - Advanced Data Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to **Juls.Terminal**, a concept portfolio designed for high-frequency trading of ideas and skills. This project reimagines the traditional CV as a financial trading terminal, providing a real-time, data-driven window into the career of a Lead Data Expert & Software Engineer.
 
-Currently, two official plugins are available:
+![Project Preview](https://images.unsplash.com/photo-1611974765270-ca1258634369?q=80&w=1000&auto=format&fit=crop) 
+*(Note: Replace with actual screenshot of your application)*
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+> **"Made in Latam for the world."** 🇲🇽 🇨🇴
 
-## React Compiler
+## 🚀 Project Overview
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+This portfolio leverages the visual language of stock market dashboards (Bloomberg Terminal, TradingView) to present professional experience. Instead of a static PDF, users interact with "assets" (skills), view "market performance" (career growth), and read "analyst reports" (case studies).
 
-## Expanding the ESLint configuration
+**Key Design Principles:**
+- **Theme:** Dark Mode, Cyberpunk/Financial aesthetics.
+- **Interaction:** Real-time feedback, pulsing indicators, and glassmorphism.
+- **Data-Driven:** Every UI element represents a datapoint from over 9 years of experience.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🛠️ Technology Stack
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+This application is built with a modern, high-performance stack:
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- **Core Framework:** [React](https://react.dev/) with [TypeScript](https://www.typescriptlang.org/) (Vite)
+- **Styling:** [Tailwind CSS](https://tailwindcss.com/) for utility-first styling.
+- **Animations:** [Framer Motion](https://www.framer.com/motion/) for fluid transitions and modal effects.
+- **Data Visualization:** [Recharts](https://recharts.org/) for the main career performance chart.
+- **Icons:** [Lucide React](https://lucide.dev/) for consistent, lightweight iconography.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 📦 Features & Component Architecture
+
+The application is structured into a single-page dashboard containing several specialized modules:
+
+### 1. Market Performance (Main Chart)
+- **Visuals:** Switchable Area Chart and Candlestick Chart.
+- **Data:** Visualizes career timeline vs. "Market Value" (Role seniority/Impact).
+- **Interactive:** Hover tooltips showing stack usage per role and company logos (Clearbit API).
+- **Markers:** "Dividend" markers representing major industries entered.
+
+### 2. Skills Market Depth
+- **Visuals:** Order book style list.
+- **Logic:** Skills are ranked by "Volume" (Years of Experience) and "Depth" (Competency Level).
+- **Assets:** SQL, Python, PowerBI, RPA, etc.
+
+### 3. Experience Feed
+- **Visuals:** Scrolling news ticker / social feed.
+- **Content:** Chronological history of roles, companies, and high-impact bullets (e.g., "+20% Efficiency").
+
+### 4. Analyst Reports (Gallery)
+- **Visuals:** Card grid with hover effects.
+- **Function:** Opens "Reports" (Deep dives/Case studies) in an embedded modal view. Links to external PowerBI/Fabric dashboards.
+
+### 5. Fundamentals (Bio & Stats)
+- **Content:** Education, Certifications, Contact Links.
+- **Footer:** Quick access to GitHub, LinkedIn, and Email.
+
+## 💻 Installation & Usage
+
+To run this terminal locally on your machine:
+
+1.  **Clone the Repository**
+    ```bash
+    git clone https://github.com/Juls95/cv_juls_v3.git
+    cd cv_juls_v3
+    ```
+
+2.  **Install Dependencies**
+    ```bash
+    npm install
+    ```
+
+3.  **Run Development Server**
+    ```bash
+    npm run dev
+    ```
+    Access the terminal at `http://localhost:5173`.
+
+4.  **Build for Production**
+    ```bash
+    npm run build
+    ```
+
+## 📂 Project Structure
+
+```
+├── public/              # Static assets
+├── src/
+│   ├── components/      # React Components
+│   │   ├── Dashboard.tsx    # Main layout grid
+│   │   ├── StockChart.tsx   # Recharts visualization
+│   │   ├── SkillsDepth.tsx  # Skill list component
+│   │   ├── InfoModal.tsx    # Contextual help popups
+│   │   └── ...
+│   ├── data.ts          # Centralized data store (CV content)
+│   ├── App.tsx          # Root component
+│   └── index.css        # Tailwind directives & global styles
+├── tailwind.config.js   # Custom color palette and theme config
+└── ...
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 👨‍💻 Author
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+**Julian Ramirez**
+*Lead Data Analyst & Software Engineer*
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
+*This portfolio is an open-source demonstration of creative frontend engineering.*
