@@ -17,7 +17,7 @@ Data Strategist and Blockchain Developer with over **9 years** of international 
 
 ### Información de Contacto
 
-- **Teléfono:** +52 55 8541 7032
+
 - **Email:** juramirez.ve@gmail.com
 - **Website:** https://www.julian.com.mx/
 
@@ -248,7 +248,7 @@ Data Strategist and Blockchain Developer with over **9 years** of international 
 
 - **Website:** https://www.julian.com.mx/
 - **Email:** juramirez.ve@gmail.com
-- **Teléfono:** +52 55 8541 7032
+
 - **LinkedIn:** (URL a agregar)
 - **GitHub:** (URL a agregar)
 
@@ -329,7 +329,7 @@ Data Strategist and Blockchain Developer with over **9 years** of international 
 
 ### Sección Contact
 - Email: juramirez.ve@gmail.com
-- Teléfono: +52 55 8541 7032
+
 - Website: https://www.julian.com.mx/
 - Disponibilidad: Flexible para trabajo remoto o relocalización
 
