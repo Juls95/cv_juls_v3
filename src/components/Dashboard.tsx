@@ -1,9 +1,8 @@
 import { StockChart } from './StockChart';
 import { ExperienceFeed } from './ExperienceFeed';
 import { SkillsDepth } from './SkillsDepth';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Award, BookOpen, ExternalLink, Mail, Linkedin, Github, BarChart, Newspaper, Maximize2, Info } from 'lucide-react';
-import { PROFILE } from '../data';
+import { motion } from 'framer-motion';
+import { Award, BookOpen, Linkedin, Github, Newspaper, Maximize2, Info } from 'lucide-react';
 import { useState } from 'react';
 import { ReportModal } from './ReportModal';
 import { InfoModal } from './InfoModal';
@@ -39,73 +38,6 @@ const Card = ({ children, className = "", delay = 0, onClick, onInfoClick }: Car
 export const Dashboard = () => {
     const [selectedReport, setSelectedReport] = useState<{ url: string, title: string } | null>(null);
     const [infoModal, setInfoModal] = useState<{ title: string, description: string } | null>(null);
-
-    const reports = [
-        {
-            title: "House Affordability",
-            subtitle: "Comprehensive Quality of Life Metrics",
-            url: "https://community.fabric.microsoft.com/t5/Contests-Gallery/EU-Lifestyle-One-Page-Analysis/m-p/4800310", // Kept previous link logic or corrected? 
-            // User said: "asegurate que los nombres sean: del primero House affordability, del segundo el que tiene el primero"
-            // Wait, "del segundo el que tiene el primero" -> Second takes 1st's name?
-            // "del primero House affordability" -> 1st = House Affordability
-            // "del segundo el que tiene el primero" -> 2nd = EU Lifestyle Analysis (old 1st)?
-            // Let's re-read carefully: "del primero House affordability, del segundo el que tiene el primero"
-            // Interpretation A: 1st Report Title = "House Affordability". 2nd Report Title = "EU Lifestyle One Page Analysis" (the old first title).
-            // Let's check links.
-            // Old Report 1 Link: ...fabric.microsoft.com/view... (EU Lifestyle)
-            // Old Report 2 Link: ...community.fabric (Market Contest)
-            // New request: Change LINK of 2nd report to ...fabric.microsoft.com/view... (House Affordability link likely).
-            // User says: "Cambia el link del segundo reporte a este: [NEW_LINK]"
-            // "nombres: del primero House affordability". This implies Report 1 Title = "House Affordability".
-            // "del segundo el que tiene el primero". This implies Report 2 Title = Old Report 1 Title ("EU Lifestyle Analysis").
-
-            // BUT visuals suggested Report 1 was the big EU Lifestyle one.
-            // Let's swap/set explicitly based on urls provided.
-            // Link 1 (Old EU Lifestyle Visual): https://app.fabric.microsoft.com/view?r=eyJrIjoiZWM1M2U4YWYtMWUwYi00NDc5LTljMTItODg2MDA5OWNlZDUzIiwidCI6IjVmMjgyOTEwLTE3NmYtNDU5ZC1hYjdkLWI3NDRhYTZlZmMwNyIsImMiOjR9
-            // Link 2 (New URL provided): https://app.fabric.microsoft.com/view?r=eyJrIjoiOGRiODc2ZjYtNjI5ZC00OGQ5LWFhMjEtNDYwNDQ5MjRiOTQxIiwidCI6IjVmMjgyOTEwLTE3NmYtNDU5ZC1hYjdkLWI3NDRhYTZlZmMwNyIsImMiOjR9&pageName=bdd8ef3c641677000aa0
-
-            // Name 1: "House Affordability"
-            // Name 2: "EU Lifestyle Analysis"
-
-            // Let's assume Report 1 is the NEW link (House Affordability context usually) or maybe the old one renamed?
-            // Actually, looking at the user request "del primero House affordability" -> Report 1 Title.
-            // "del segundo el que tiene el primero" -> Report 2 Title = "EU Lifestyle..."
-            // Let's look at the link for the 2nd one provided in prompt: THAT looks like the House Affordability one (it says One Page Analysis in gallery usually, but let's trust the names).
-
-            // Let's stick to the URL change requested for the *second* report.
-            // And rename 1st to "House Affordability".
-            // Rename 2nd to "EU Lifestyle Analysis".
-
-            image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=800", // Housing image
-            tag: "REAL ESTATE"
-        },
-        {
-            title: "EU Lifestyle Analysis",
-            subtitle: "One Page Analysis Challenge",
-            url: "https://app.fabric.microsoft.com/view?r=eyJrIjoiOGRiODc2ZjYtNjI5ZC00OGQ5LWFhMjEtNDYwNDQ5MjRiOTQxIiwidCI6IjVmMjgyOTEwLTE3NmYtNDU5ZC1hYjdkLWI3NDRhYTZlZmMwNyIsImMiOjR9&pageName=bdd8ef3c641677000aa0",
-            image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800", // Dashboard image
-            tag: "POWER BI"
-        }
-    ];
-
-    // Wait, I might have swapped them based on user phrasing.
-    // "Cambia el link del segundo reporte a [New Link]"
-    // "nombres: del primero House affordability".
-    // Let's just create the array with the logic:
-    // Item 0: Title "House Affordability". Url: The OLD first link (EU Lifestyle one? Or maybe House Affordability was the first concept?).
-    // actually, let's use the LINKS as the source of truth for CONTENT.
-    // Link A (Old 1): ...ZWM1M... (EU Lifestyle)
-    // Link B (New 2): ...OGRiOD... (New Link provided)
-
-    // User says: "del primero House affordability". Maybe Link A is House Affordability? The screenshot says "House Affordability" inside the EU Lifestyle Text.
-    // User says: "del segundo el que tiene el primero" -> Title of 2nd should be "EU Lifestyle Analysis".
-    // Link of 2nd should be the NEW ONE.
-
-    // So:
-    // Report 1: Title "House Affordability". URL: Link A (Original).
-    // Report 2: Title "EU Lifestyle Analysis". URL: Link B (New).
-
-    // Let's proceed with this structure.
 
     return (
         <div className="flex-1 p-2 gap-2 grid grid-cols-12 grid-rows-12 h-full overflow-hidden">

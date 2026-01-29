@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, ExternalLink, Maximize2 } from 'lucide-react';
+import { X } from 'lucide-react';
 
 interface ReportModalProps {
     isOpen: boolean;
