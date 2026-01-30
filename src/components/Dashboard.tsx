@@ -40,7 +40,7 @@ export const Dashboard = () => {
     const [infoModal, setInfoModal] = useState<{ title: string, description: string } | null>(null);
 
     return (
-        <div className="flex-1 p-2 gap-2 grid grid-cols-12 grid-rows-12 h-full overflow-hidden">
+        <div className="flex-1 p-2 gap-2 flex flex-col md:grid md:grid-cols-12 md:grid-rows-12 h-auto md:h-full overflow-y-auto md:overflow-hidden pb-20 md:pb-2">
 
             <ReportModal
                 isOpen={!!selectedReport}
@@ -58,7 +58,7 @@ export const Dashboard = () => {
 
             {/* Main Chart Area (Top Left) */}
             <Card
-                className="col-span-12 md:col-span-8 row-span-7"
+                className="w-full h-[400px] md:h-auto col-span-12 md:col-span-8 md:row-span-7"
                 delay={0.1}
                 onInfoClick={() => setInfoModal({
                     title: "Interactive Career Chart",
@@ -72,7 +72,7 @@ export const Dashboard = () => {
 
             {/* Experience Feed (Top Right) */}
             <Card
-                className="col-span-12 md:col-span-4 row-span-7 flex flex-col p-0"
+                className="w-full h-[350px] md:h-auto col-span-12 md:col-span-4 md:row-span-7 flex flex-col p-0"
                 delay={0.2}
                 onInfoClick={() => setInfoModal({
                     title: "Experience Feed",
@@ -84,7 +84,7 @@ export const Dashboard = () => {
 
             {/* Skills Depth (Bottom Left) */}
             <Card
-                className="col-span-12 md:col-span-3 row-span-5 p-0"
+                className="w-full h-[350px] md:h-auto col-span-12 md:col-span-3 md:row-span-5 p-0"
                 delay={0.3}
                 onInfoClick={() => setInfoModal({
                     title: "Skills Market Depth",
@@ -96,7 +96,7 @@ export const Dashboard = () => {
 
             {/* News / Reports Gallery (Bottom Center) */}
             <Card
-                className="col-span-12 md:col-span-6 row-span-5 flex flex-col gap-2"
+                className="w-full h-[350px] md:h-auto col-span-12 md:col-span-6 md:row-span-5 flex flex-col gap-2"
                 delay={0.4}
                 onInfoClick={() => setInfoModal({
                     title: "Analyst Reports",
@@ -158,7 +158,7 @@ export const Dashboard = () => {
 
             {/* Education & Bio (Bottom Right) */}
             <Card
-                className="col-span-12 md:col-span-3 row-span-5 flex flex-col gap-3"
+                className="w-full h-[300px] md:h-auto col-span-12 md:col-span-3 md:row-span-5 flex flex-col gap-3"
                 delay={0.5}
                 onInfoClick={() => setInfoModal({
                     title: "Fundamental Data",

@@ -75,9 +75,24 @@ To run this terminal locally on your machine:
     Access the terminal at `http://localhost:5173`.
 
 4.  **Build for Production**
-    ```bash
-    npm run build
-    ```
+
+## 🚀 Deployment
+
+This project is deployed on **Google Cloud Run**, utilizing a Docker container served via Nginx.
+
+- **Live Demo:** [Insert your .run.app URL here]
+- **CI/CD:** Automated deployment is configured via Cloud Build triggers connected to the GitHub repository. Pushing to `main` automatically builds and deploys a new revision.
+
+### Manual Deployment (Optional)
+If you have the Google Cloud SDK installed, you can modify and deploy manually using:
+
+```bash
+gcloud run deploy cv-juls-v3 \
+  --source . \
+  --region us-central1 \
+  --allow-unauthenticated \
+  --labels dev-tutorial=blog-devcommunity2026
+```
 
 ## 📂 Project Structure
 
