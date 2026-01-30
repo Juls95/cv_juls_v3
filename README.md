@@ -2,8 +2,7 @@
 
 Welcome to **Juls.Terminal**, a concept portfolio designed for high-frequency trading of ideas and skills. This project reimagines the traditional CV as a financial trading terminal, providing a real-time, data-driven window into the career of a Lead Data Expert & Software Engineer.
 
-![Project Preview](https://images.unsplash.com/photo-1611974765270-ca1258634369?q=80&w=1000&auto=format&fit=crop) 
-*(Note: Replace with actual screenshot of your application)*
+![Dashboard Preview](src/assets/home.png)
 
 > **"Made in Latam for the world."** 🇲🇽 🇨🇴
 

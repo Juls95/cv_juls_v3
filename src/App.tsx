@@ -5,11 +5,11 @@ import { Dashboard } from './components/Dashboard';
 
 function App() {
   return (
-    <div className="h-screen w-screen bg-stock-bg text-stock-text flex flex-col md:overflow-hidden overflow-auto font-sans selection:bg-stock-warm selection:text-black">
+    <div className="min-h-screen w-screen md:h-screen bg-stock-bg text-stock-text flex flex-col md:overflow-hidden font-sans selection:bg-stock-warm selection:text-black">
       <Cursor />
       <Header />
       <Ticker />
-      <main className="flex-1 min-h-0 relative flex flex-col md:block">
+      <main className="flex-1 relative flex flex-col md:block md:min-h-0">
         <Dashboard />
       </main>
 

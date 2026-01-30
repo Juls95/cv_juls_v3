@@ -58,9 +58,9 @@ export const StockChart = () => {
 
     return (
         <div className="h-full w-full p-4 flex flex-col">
-            <div className="flex justify-between items-end mb-4 px-2">
-                <div>
-                    <div className="flex items-center gap-2">
+            <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-4 px-2 gap-4 md:gap-0">
+                <div className="w-full md:w-auto">
+                    <div className="flex items-center justify-between md:justify-start gap-2">
                         <h3 className="text-gray-400 text-xs font-mono">MARKET PERFORMANCE</h3>
                         <div className="flex bg-gray-900 rounded p-0.5 border border-gray-800 transition-all hover:border-gray-700">
                             <button
@@ -79,9 +79,9 @@ export const StockChart = () => {
                             </button>
                         </div>
                     </div>
-                    <h2 className="text-2xl font-bold text-stock-text">CAREER GROWTH</h2>
+                    <h2 className="text-2xl font-bold text-stock-text mt-1">CAREER GROWTH</h2>
                 </div>
-                <div className="flex gap-6 text-right items-end">
+                <div className="flex w-full md:w-auto justify-between md:justify-end gap-6 text-right items-end border-t border-gray-800 md:border-none pt-2 md:pt-0">
                     <div>
                         <p className="text-[10px] text-gray-500">MKT CAP</p>
                         <p className="font-mono text-white font-bold text-sm">{PROFILE.marketCap}</p>

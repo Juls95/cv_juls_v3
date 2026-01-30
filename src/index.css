@@ -11,8 +11,9 @@
 body {
   margin: 0;
   padding: 0;
-  overflow: hidden; /* No scroll */
-  cursor: none; /* Custom cursor */
+  /* overflow: hidden; Removed to allow mobile scroll */
+  cursor: none;
+  /* Custom cursor */
 }
 
 /* Custom Scrollbar just in case inner panels need it */
@@ -20,13 +21,16 @@ body {
   width: 6px;
   height: 6px;
 }
+
 ::-webkit-scrollbar-track {
   background: #1a1a1a;
 }
+
 ::-webkit-scrollbar-thumb {
   background: #333;
   border-radius: 3px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background: #444;
 }

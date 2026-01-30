@@ -40,7 +40,7 @@ export const Dashboard = () => {
     const [infoModal, setInfoModal] = useState<{ title: string, description: string } | null>(null);
 
     return (
-        <div className="flex-1 p-2 gap-2 flex flex-col md:grid md:grid-cols-12 md:grid-rows-12 h-auto md:h-full overflow-y-auto md:overflow-hidden pb-20 md:pb-2">
+        <div className="flex-1 p-2 gap-2 flex flex-col md:grid md:grid-cols-12 md:grid-rows-12 h-auto md:h-full md:overflow-hidden pb-8 md:pb-2">
 
             <ReportModal
                 isOpen={!!selectedReport}
@@ -58,7 +58,7 @@ export const Dashboard = () => {
 
             {/* Main Chart Area (Top Left) */}
             <Card
-                className="w-full h-[400px] md:h-auto col-span-12 md:col-span-8 md:row-span-7"
+                className="w-full h-[450px] md:h-auto col-span-12 md:col-span-8 md:row-span-7"
                 delay={0.1}
                 onInfoClick={() => setInfoModal({
                     title: "Interactive Career Chart",
